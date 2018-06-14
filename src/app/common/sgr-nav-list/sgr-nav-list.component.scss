@@ -1,0 +1,13 @@
+.sgr-nav-list{
+    width: 375px;
+    background: #252526;
+    display: flex;
+    height: 100vh;
+    .sgr-nav-list-shrink{
+        width: 50px;
+        background: #333333;
+    }
+    .sgr-nav-list-expand{
+        flex: auto;
+    }
+}
