@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sgr-nav-list.component.scss']
 })
 export class SgrNavListComponent implements OnInit {
-
+  isShow = false;
   constructor() { }
 
   ngOnInit() {
   }
-
+  onFolder ($event) {
+    this.isShow = !this.isShow;
+    console.log($event);
+  }
 }
