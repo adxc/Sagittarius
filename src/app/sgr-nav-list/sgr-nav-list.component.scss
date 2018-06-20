@@ -55,6 +55,29 @@
             width: 315px;
             height: 100%;
             color: #fff;
+            .sgr-title{
+                color: #999999;
+                font-size: 12px;
+                height: 35px;
+                line-height: 35px;
+                padding-left: 15px;
+            }
+            .sgr-title-item{
+                background: #333333;
+                height: 25px;
+                font-size: 12px;
+                padding-left: 15px;
+                line-height: 25px;
+            }
+            .sgr-btn-add{
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .btn-primary{
+                    width: 175px;
+                }
+            }
         }
     }
 }

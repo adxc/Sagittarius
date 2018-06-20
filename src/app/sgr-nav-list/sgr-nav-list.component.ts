@@ -9,6 +9,7 @@ export class SgrNavListComponent implements OnInit {
   isShow = false;
   isActive = 'folder';
   selectItem = 'folder';
+  public isCollapsed = false;
   constructor() { }
 
   ngOnInit() {
@@ -26,5 +27,8 @@ export class SgrNavListComponent implements OnInit {
     } else {
       this.isActive = item;
     }
+  }
+  addProject () {
+    console.log(1);
   }
 }
