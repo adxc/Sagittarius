@@ -15,8 +15,7 @@ function createWindow () {
   //win.loadURL(`file://${__dirname}/dist/Sagittarius/index.html`)
   win.loadURL(`http://localhost:4200`)
   //// uncomment below to open the DevTools.
-  // win.webContents.openDevTools()
-
+  win.webContents.openDevTools() 
   // Event when the window is closed.
   win.on('closed', function () {
     win = null
@@ -39,5 +38,5 @@ app.on('activate', function () {
   // macOS specific close process
   if (win === null) {
     createWindow()
-  }
+   }
 })

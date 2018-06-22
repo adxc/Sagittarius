@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ElectronRemoteService} from '../sgr-service/electron-remote.service';
 
 @Component({
   selector: 'app-sgr-nav-list',
@@ -10,7 +11,7 @@ export class SgrNavListComponent implements OnInit {
   isActive = 'folder';
   selectItem = 'folder';
   public isCollapsed = false;
-  constructor() { }
+  constructor(private electronRemote: ElectronRemoteService) { }
 
   ngOnInit() {
   }
@@ -27,8 +28,5 @@ export class SgrNavListComponent implements OnInit {
     } else {
       this.isActive = item;
     }
-  }
-  addProject () {
-    console.log(1);
   }
 }

@@ -8,20 +8,9 @@
     </nav>
   </div>
   <div class="sgr-nav-list-expand" [ngSwitch] = "selectItem">
-    <div class="nav-expand-item " *ngSwitchCase="'folder'" [class.f-dn]="isShow">
-      <div class="sgr-title">项目管理器</div>
-      <div class="sgr-folder-add">
-        <div class="sgr-title-item">添加的项目</div>
-        <div class="sgr-btn-add">
-          <div class="btn btn-primary" (click)="addProject()">添加项目</div>
-        </div>
-      </div>
-      <div class="sgr-folder-list">
-        <div class="sgr-title-item">项目的列表</div>
-      </div>
-    </div>
-    <div class="nav-expand-item " *ngSwitchCase="'tool'" [class.f-dn]="isShow">2</div>
-    <div class="nav-expand-item " *ngSwitchCase="'search'" [class.f-dn]="isShow">3</div>
-    <div class="nav-expand-item " *ngSwitchCase="'news'" [class.f-dn]="isShow">4</div>
+    <app-sgr-folder *ngSwitchCase="'folder'" [class.f-dn]="isShow"></app-sgr-folder>
+    <app-sgr-tool  *ngSwitchCase="'tool'" [class.f-dn]="isShow"></app-sgr-tool>
+    <app-sgr-search *ngSwitchCase="'search'" [class.f-dn]="isShow"></app-sgr-search>
+    <app-sgr-news *ngSwitchCase="'news'" [class.f-dn]="isShow"></app-sgr-news>
   </div>
 </div>
