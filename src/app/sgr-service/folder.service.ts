@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+
+
 import {ElectronRemoteService} from './electron-remote.service';
+import {NodeLinkService} from './node-link.service';
 @Injectable()
 export class FolderService {
-  private fs  = window.require('fs');
-  constructor(private electronRemote: ElectronRemoteService) { }
+  constructor(private electronRemote: ElectronRemoteService, private nodelink: NodeLinkService) { }
   addProject () {
-    this.electronRemote.getDialog();
+    const path: String[] = this.electronRemote.getDialog();
+    this.nodelink.getFolder(path);
   }
   deleteProject () {
     console.log(1);

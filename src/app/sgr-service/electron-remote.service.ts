@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ElectronRemoteService {
   private dialog = window.require('electron').remote.dialog;
   constructor() { }
-  getDialog (): String {
-    return this.dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']});
+  getDialog (): String[] {
+    return this.dialog.showOpenDialog({properties: ['openDirectory', 'multiSelections']});
   }
 }
