@@ -2,6 +2,8 @@
     width: 315px;
     height: 100%;
     color: #fff;
+    display: flex;
+    flex-direction: column;
     .sgr-title{
         color: #999999;
         font-size: 12px;
@@ -25,4 +27,29 @@
             width: 175px;
         }
     }
+    .sgr-folder-list{
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        .sgr-folder-listPanel{
+            flex: auto;
+            overflow: auto;
+            .sgr-folder-item{
+                display: flex;
+                padding: 5px;
+                align-items: center;
+                justify-content: space-between;
+                height: 50px;
+                cursor: pointer;
+                .sgr-project-size{
+                    font-size: 14px;
+                    color: #999999;
+                }
+                &:hover{
+                    background:rgba(109, 108, 108, 0.08);
+                }
+            }
+        }
+    }
+   
 }

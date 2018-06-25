@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-import { fromPromise } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class NodeLinkService {
   private fs  = window.require('fs');
+  private path = window.require('path');
   constructor() { }
-  getFolder (path: String[]) {
-    console.log(path);
-    this.fs.readdir(path[0], (err, files) => {
+  getFolder (folderPath: String[]) {
+    console.log(folderPath);
+    console.log(this.path.basename(folderPath[0]));
+    this.fs.readdir(folderPath[0], (err, files) => {
       console.log(files);
     });
   }
