@@ -11,6 +11,7 @@ import { SgrFolderComponent } from './sgr-control/sgr-folder/sgr-folder.componen
 import { SgrToolComponent } from './sgr-control/sgr-tool/sgr-tool.component';
 import { SgrSearchComponent } from './sgr-control/sgr-search/sgr-search.component';
 import { SgrNewsComponent } from './sgr-control/sgr-news/sgr-news.component';
+import { SgrFolderSizePipe } from './sgr-pipe/sgr-folder-size.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SgrNewsComponent } from './sgr-control/sgr-news/sgr-news.component';
     SgrToolComponent,
     SgrSearchComponent,
     SgrNewsComponent,
+    SgrFolderSizePipe,
   ],
   imports: [
     BrowserModule,

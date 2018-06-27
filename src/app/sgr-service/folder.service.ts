@@ -8,7 +8,7 @@ export class FolderService {
   constructor(private electronRemote: ElectronRemoteService, private nodelink: NodeLinkService) { }
   addProject () {
     const path: String[] = this.electronRemote.getDialog();
-    this.nodelink.getFolder(path);
+    this.nodelink.getFolder(path[0]);
   }
   deleteProject () {
     console.log(1);

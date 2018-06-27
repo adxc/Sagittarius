@@ -41,6 +41,10 @@
                 justify-content: space-between;
                 height: 50px;
                 cursor: pointer;
+                .sgr-project-name{
+                    width: 40%;
+                    text-align: center;
+                }
                 .sgr-project-size{
                     font-size: 14px;
                     color: #999999;
@@ -48,6 +52,9 @@
                 &:hover{
                     background:rgba(109, 108, 108, 0.08);
                 }
+            }
+            .isActive {
+                background: #545252 !important;
             }
         }
     }

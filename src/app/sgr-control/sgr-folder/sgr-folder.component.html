@@ -9,13 +9,13 @@
   <div class="sgr-folder-list">
     <div class="sgr-title-item">项目的列表</div>
     <div class="sgr-folder-listPanel">
-      <div class="sgr-folder-item" (click)="showProject('asd')">
+      <div *ngFor="let folder of folderList" class="sgr-folder-item" (click)="showProject(folder)" [class.isActive]="folder === selectFolder">
         <img src="../../../assets/images/project.png" alt="">
         <div class="sgr-project-name">
-          angularDemo
+          {{folder.name}}
         </div>
         <div class="sgr-project-size">
-          20.00Mb
+          {{folder.size}}Mb
         </div>
       </div>
     </div>
