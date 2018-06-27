@@ -1,38 +1,33 @@
 import { Injectable } from '@angular/core';
 
 import { FolderModel } from '../sgr-model/folder-model';
-
+import { IpcRendererService } from '../sgr-service/ipc-renderer.service';
 @Injectable({
   providedIn: 'root'
 })
 export class NodeLinkService {
   private fs  = window.require('fs');
   private path = window.require('path');
-  constructor() { }
-  getFolder (folderPath: String) {
-    // const folder: FolderModel = {
-    //   name: this.path.basename(folderPath),
-    //   path: folderPath,
-    //   size: 123
-    // };
-    // console.log(folderPath);
-    // console.log(this.path.basename(folderPath));
-    this.fs.readdir(folderPath, (err, files) => {
-      console.log(files);
-      files.forEach(element => {
-        const nowPath = folderPath + '/' + element;
-        // console.group(element);
-        // console.log(this.fs.statSync(folderPath + '/' + element).isDirectory());
-        // console.log(this.fs.statSync(folderPath + '/' + element));
-        // console.groupEnd();
-        if (this.fs.statSync(nowPath).isDirectory()) {
-          this.getFolder(nowPath);
-        }
-      });
-    });
+  private size = 0;
+  private project: FolderModel;
+  constructor(private ipcrenderer: IpcRendererService) { }
+  getFolder (folderPath: string) {
+    this.folderSize(folderPath);
+    this.project = {
+      name: this.path.basename(folderPath),
+      path: folderPath,
+      size: this.size,
+    };
   }
-  folderSize (folderPath: String): Number {
-    this.fs.readdir();
-    return 1;
+  folderSize (folderPath: String) {
+    const files = this.fs.readdirSync(folderPath);
+    files.forEach(element => {
+      const nowPath = folderPath + '/' + element;
+      if (this.fs.statSync(nowPath).isDirectory()) {
+        this.folderSize(nowPath);
+      } else {
+        this.size += this.fs.statSync(nowPath).size;
+      }
+    });
   }
 }

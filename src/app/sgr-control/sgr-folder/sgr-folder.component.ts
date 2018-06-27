@@ -19,6 +19,7 @@ export class SgrFolderComponent implements OnInit {
   constructor(private folderService: FolderService) { }
 
   ngOnInit() {
+    this.showProjectList();
   }
   addProject () {
     this.folderService.addProject();
@@ -26,5 +27,7 @@ export class SgrFolderComponent implements OnInit {
   showProject (folder) {
     this.selectFolder = folder;
     console.log(name);
+  }
+  showProjectList () {
   }
 }
