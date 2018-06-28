@@ -40,3 +40,5 @@ app.on('activate', function () {
     createWindow()
    }
 })
+
+require("./api/dbService/dbControll");

@@ -15,6 +15,6 @@ export class FolderService {
     console.log(1);
   }
   getProjectList () {
-
+    this.ipcrenderer.getApi();
   }
 }
