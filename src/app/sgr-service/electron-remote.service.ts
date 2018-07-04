@@ -7,6 +7,6 @@ export class ElectronRemoteService {
   private dialog = window.require('electron').remote.dialog;
   constructor() { }
   getDialog (): string[] {
-    return this.dialog.showOpenDialog({properties: ['openDirectory', 'multiSelections']});
+    return this.dialog.showOpenDialog({properties: ['openDirectory']});
   }
 }

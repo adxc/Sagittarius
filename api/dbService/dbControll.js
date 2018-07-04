@@ -1,13 +1,14 @@
 const Database = require('nedb');
 const {ipcMain} =  require('electron');
 const db = new Database({
-    filename: './data/folder.db',
+    filename: './data/sagittarius.db',
     autoload:true
-})
-
+});
 
 ipcMain.on('insert',(event, arg) =>{
-    console.log(arg);
+    db.insert(arg, (err,ret) => {
+        console.log(ret);
+    })
 });
 
 ipcMain.on('delect',(event, arg) =>{

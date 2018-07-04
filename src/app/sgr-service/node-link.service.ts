@@ -17,7 +17,9 @@ export class NodeLinkService {
       name: this.path.basename(folderPath),
       path: folderPath,
       size: this.size,
+      type: 'project',
     };
+    this.ipcrenderer.insert(this.project);
   }
   folderSize (folderPath: String) {
     const files = this.fs.readdirSync(folderPath);

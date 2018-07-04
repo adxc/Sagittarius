@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import { FolderModel } from '../sgr-model/folder-model';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,7 @@ export class IpcRendererService {
   delete () {
     this.ipcRenderer.send('delect', 'abc');
   }
-  insert () {
-    this.ipcRenderer.send('insert', 'abc');
+  insert (project: FolderModel) {
+    this.ipcRenderer.send('insert', project);
   }
 }
