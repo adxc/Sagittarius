@@ -12,10 +12,10 @@ import { FolderModel } from '../../sgr-model/folder-model';
 export class SgrFolderComponent implements OnInit {
   folder: FolderModel;
   private selectFolder;
-  folderList: FolderModel [] = [{name: 'abc', size: 12.3, path: 'D:\abc\ab'},
-  {name: 'bbc', size: 45.6, path: 'D:\abc\bb'},
-  {name: 'cbc', size: 78.9, path: 'D:\abc\cb'},
-  {name: 'dbc', size: 12.10, path: 'D:\abc\db'}];
+  folderList: FolderModel [] = [{name: 'abc', size: 12.3, path: 'D:\abc\ab', type: 'project'},
+  {name: 'bbc', size: 45.6, path: 'D:\abc\bb', type: 'project'},
+  {name: 'cbc', size: 78.9, path: 'D:\abc\cb', type: 'project'},
+  {name: 'dbc', size: 12.10, path: 'D:\abc\db', type: 'project'}];
   constructor(private folderService: FolderService) { }
 
   ngOnInit() {
@@ -26,8 +26,8 @@ export class SgrFolderComponent implements OnInit {
   }
   showProject (folder) {
     // this.selectFolder = folder;
-    this.folderService.getProjectList();
   }
   showProjectList () {
+    this.folderService.getProjectList();
   }
 }

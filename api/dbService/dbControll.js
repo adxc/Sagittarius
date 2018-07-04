@@ -20,5 +20,7 @@ ipcMain.on('update',(event, arg) =>{
 });
 
 ipcMain.on('select',(event, arg) =>{
-    console.log(arg);
+    db.find({}, (err, docs) => {
+        console.log(docs);
+    })
 })
