@@ -19,7 +19,11 @@ export class NodeLinkService {
       size: this.size,
       type: 'project',
     };
-    return this.ipcrenderer.insert(this.project);
+    this.ipcrenderer.insert(this.project).then(msg => {
+      if (msg === 'success') {
+        this.size = 0;
+      }
+    });
   }
   folderSize (folderPath: String) {
     const files = this.fs.readdirSync(folderPath);

@@ -9,12 +9,11 @@ export class FolderService {
   constructor(private electronRemote: ElectronRemoteService,
      private nodelink: NodeLinkService,
       private ipcrendererService: IpcRendererService) { }
-  addProject (): Observable<{}> {
+  addProject () {
     const path: string[] = this.electronRemote.getDialog();
     if (path) {
-      return(from(this.nodelink.getFolder(path[0])));
+      this.nodelink.getFolder(path[0]);
     }
-    return null;
   }
   deleteProject () {
     console.log(1);

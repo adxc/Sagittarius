@@ -19,14 +19,11 @@ export class SgrFolderComponent implements OnInit {
     this.showProjectList();
   }
   addProject () {
-    if (this.folderService.addProject()) {
-      this.folderService.addProject().subscribe(projectList => {
-        this.folderList = projectList;
-      });
-    }
+    this.folderService.addProject();
+    this.showProjectList();
   }
   showProject (folder) {
-    // this.selectFolder = folder;
+     this.selectFolder = folder;
   }
   showProjectList () {
     this.folderService.getProjectList().subscribe(projectList => {

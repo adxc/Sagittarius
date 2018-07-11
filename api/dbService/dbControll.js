@@ -7,7 +7,11 @@ const db = new Database({
 
 ipcMain.on('insert',(event, arg) =>{
     db.insert(arg, (err,docs) => {
-        event.sender.send('insert',docs);
+        if(err){
+            event.sender.send('insert', err);
+        }else {
+            event.sender.send('insert','success');
+        }
     })
 });
 
