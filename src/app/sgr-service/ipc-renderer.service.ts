@@ -11,7 +11,8 @@ export class IpcRendererService {
     this.ipcRenderer.send('test', 'abc');
   }
   select (args) {
-    return this.ipcRenderer.send('select', args);
+    this.ipcRenderer.send('select', args);
+    return this.getMainMess('select');
   }
   update () {
     this.ipcRenderer.send('update', 'abc');
@@ -21,5 +22,13 @@ export class IpcRendererService {
   }
   insert (project: FolderModel) {
     this.ipcRenderer.send('insert', project);
+    return this.getMainMess('insert');
+  }
+  getMainMess (type) {
+    return new Promise((resolve, reject) => {
+      this.ipcRenderer.on(type, (event, arg) => {
+        resolve(arg);
+      });
+    });
   }
 }

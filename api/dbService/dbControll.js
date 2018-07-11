@@ -6,8 +6,8 @@ const db = new Database({
 });
 
 ipcMain.on('insert',(event, arg) =>{
-    db.insert(arg, (err,ret) => {
-        console.log(ret);
+    db.insert(arg, (err,docs) => {
+        event.sender.send('insert',docs);
     })
 });
 
@@ -20,8 +20,7 @@ ipcMain.on('update',(event, arg) =>{
 });
 
 ipcMain.on('select',(event, arg) =>{
-   return new Promise((resole, reject) =>{
-    db.find(arg, (err, docs) => {
-        resole(docs);})
-   })
+    db.find(arg, (err, docs) =>{
+       event.sender.send('select',docs);
+    })
 })
