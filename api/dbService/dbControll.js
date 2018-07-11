@@ -20,7 +20,8 @@ ipcMain.on('update',(event, arg) =>{
 });
 
 ipcMain.on('select',(event, arg) =>{
-    db.find({}, (err, docs) => {
-        console.log(docs);
-    })
+   return new Promise((resole, reject) =>{
+    db.find(arg, (err, docs) => {
+        resole(docs);})
+   })
 })

@@ -10,8 +10,8 @@ export class IpcRendererService {
   getApi () {
     this.ipcRenderer.send('test', 'abc');
   }
-  select () {
-    this.ipcRenderer.send('select', 'abc');
+  select (args) {
+    return this.ipcRenderer.send('select', args);
   }
   update () {
     this.ipcRenderer.send('update', 'abc');
