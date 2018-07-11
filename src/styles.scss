@@ -56,3 +56,22 @@ a,a:hover{color:#333;}
 .f-csh{cursor:help;}
 .f-csm{cursor:move;}
 .f-usn{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:rgba(136, 136, 136, 0.44);    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

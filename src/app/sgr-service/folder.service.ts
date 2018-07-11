@@ -9,7 +9,10 @@ export class FolderService {
   constructor(private electronRemote: ElectronRemoteService, private nodelink: NodeLinkService, private ipcrenderer: IpcRendererService) { }
   addProject () {
     const path: string[] = this.electronRemote.getDialog();
-    this.nodelink.getFolder(path[0]);
+    if (path) {
+      console.log(path);
+      this.nodelink.getFolder(path[0]);
+    }
   }
   deleteProject () {
     console.log(1);

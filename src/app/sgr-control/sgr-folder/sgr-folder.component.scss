@@ -36,11 +36,14 @@
             overflow: auto;
             .sgr-folder-item{
                 display: flex;
-                padding: 5px;
+                padding: 5px 10px;
                 align-items: center;
                 justify-content: space-between;
                 height: 50px;
                 cursor: pointer;
+                img {
+                    width: 32px;
+                }
                 .sgr-project-name{
                     width: 40%;
                     text-align: center;
@@ -57,6 +60,5 @@
                 background: #545252 !important;
             }
         }
-    }
-   
+    }   
 }
