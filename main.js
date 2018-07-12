@@ -15,12 +15,12 @@ function createWindow () {
     win.maximize();
   })
   //win.loadURL(`file://${__dirname}/dist/Sagittarius/index.html`)
-  win.loadURL(`http://localhost:4200`)
-  // win.loadURL(url.format({
-  //   pathname: path.join(__dirname, 'dist/Sagittarius/index.html'),
-  //   protocol: 'file:',
-  //   slashes: true
-  // }));
+  //win.loadURL(`http://localhost:4200`)
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'dist/Sagittarius/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
   //// uncomment below to open the DevTools.
   win.webContents.openDevTools() 
   // Event when the window is closed.

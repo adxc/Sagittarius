@@ -24,7 +24,6 @@ export class SgrNavListComponent implements OnInit {
     }
     if (this.isShow) {
       this.isActive = '';
-      console.log(this.isActive);
     } else {
       this.isActive = item;
     }
