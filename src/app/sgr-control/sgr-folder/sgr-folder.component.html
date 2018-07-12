@@ -10,7 +10,7 @@
     <div class="sgr-title-item">项目的列表</div>
     <div class="sgr-folder-listPanel">
       <div *ngFor="let folder of folderList" class="sgr-folder-item" (click)="showProject(folder)" [class.isActive]="folder === selectFolder">
-        <img src="../../../assets/images/project.png" alt="">
+        <img src="./assets/images/project.png" alt="">
         <div class="sgr-project-name">
           {{folder.name}}
         </div>

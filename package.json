@@ -1,16 +1,20 @@
 {
   "name": "sagittarius",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": "andyxic",
+  "description": "An Electron App",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron ."
+    "electron-build": "ng build --prod && electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "private": true,
   "dependencies": {
@@ -26,9 +30,35 @@
     "@ng-bootstrap/ng-bootstrap": "^2.1.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
     "nedb": "^1.8.0",
+    "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
+  },
+  "build": {
+    "appId": "com.electron.andyxic",
+    "win": {
+      "icon": "dist/Sagittarius/icon.png",
+      "target": [
+        "portable"
+      ]
+    },
+    "files": [
+      "**/*",
+      "dist/Sagittarius/*",
+      "!*.ts",
+      "!LICENSE.md",
+      "!package.json",
+      "!package-lock.json",
+      "!src/",
+      "!e2e/",
+      "!.angular-cli.json",
+      "!_config.yml",
+      "!karma.conf.js",
+      "!tsconfig.json",
+      "!tslint.json"
+    ]
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.6",

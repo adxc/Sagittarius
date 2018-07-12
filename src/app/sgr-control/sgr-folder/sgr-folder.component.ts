@@ -12,9 +12,8 @@ import { FolderModel } from '../../sgr-model/folder-model';
 export class SgrFolderComponent implements OnInit {
   folder: FolderModel;
   private selectFolder;
-  private folderList;
+  public folderList;
   constructor(private folderService: FolderService) { }
-
   ngOnInit() {
     this.showProjectList();
   }
