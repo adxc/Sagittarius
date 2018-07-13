@@ -38,19 +38,24 @@
                 display: flex;
                 padding: 5px 10px;
                 align-items: center;
-                justify-content: space-between;
                 height: 50px;
                 cursor: pointer;
-                img {
+                .sgr-project-logo {
                     width: 32px;
+                    img{
+                        width: 100%;
+                    }
+                    margin-right: 30px;
                 }
                 .sgr-project-name{
-                    width: 40%;
-                    text-align: center;
+                    width: 180px;
+                    text-align: left;
                 }
                 .sgr-project-size{
+                    width: 80px;
                     font-size: 14px;
                     color: #999999;
+                    text-align: right;
                 }
                 &:hover{
                     background:rgba(109, 108, 108, 0.08);
