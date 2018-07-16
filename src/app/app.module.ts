@@ -12,7 +12,6 @@ import { SgrToolComponent } from './sgr-control/sgr-tool/sgr-tool.component';
 import { SgrSearchComponent } from './sgr-control/sgr-search/sgr-search.component';
 import { SgrNewsComponent } from './sgr-control/sgr-news/sgr-news.component';
 import { SgrFolderSizePipe } from './sgr-pipe/sgr-folder-size.pipe';
-import { RtClickDirective } from './sgr-directive/rt-click.directive';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { RtClickDirective } from './sgr-directive/rt-click.directive';
     SgrToolComponent,
     SgrSearchComponent,
     SgrNewsComponent,
-    SgrFolderSizePipe,
-    RtClickDirective,
+    SgrFolderSizePipe
   ],
   imports: [
     BrowserModule,
