@@ -9,7 +9,7 @@
   <div class="sgr-folder-list">
     <div class="sgr-title-item">项目的列表</div>
     <div class="sgr-folder-listPanel">
-      <div *ngFor="let folder of folderList" (contextmenu)="managerProject()" class="sgr-folder-item" (click)="showProject(folder)"  [class.isActive]="folder === selectFolder">
+      <div *ngFor="let folder of folderList" (contextmenu)="managerProject(folder)" class="sgr-folder-item" (click)="showProject(folder)"  [class.isActive]="folder === selectFolder">
         <div class="sgr-project-logo">
           <img src="./assets/images/project.png" alt="">
         </div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,12 @@ export class ElectronRemoteService {
   getDialog (): string[] {
     return this.dialog.showOpenDialog({properties: ['openDirectory']});
   }
-  getMenu (): string[] {
-   return null;
+  getMenu () {
+    const menu = new this.Menu();
+    menu.append(new this.MenuItem({label: 'MenuItem1', click(menuItem, browserWindow, event) {
+      console.log(menuItem);
+      console.log(browserWindow);
+      console.log(event); }}));
+    return of(menu.popup({}));
   }
 }

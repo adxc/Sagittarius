@@ -15,6 +15,9 @@ export class FolderService {
       this.nodelink.getFolder(path[0]);
     }
   }
+  managerProject (folder) {
+    this.electronRemote.getMenu().subscribe(value => console.log(value));
+  }
   deleteProject () {
     console.log(1);
   }

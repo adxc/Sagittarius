@@ -24,8 +24,8 @@ export class SgrFolderComponent implements OnInit {
   showProject (folder) {
      this.selectFolder = folder;
   }
-  managerProject () {
-    console.log(1);
+  managerProject (folder) {
+    this.folderService.managerProject(folder);
   }
   showProjectList () {
     this.folderService.getProjectList().subscribe(projectList => {
