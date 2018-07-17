@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { SgrWorkspaceFolderComponent } from './sgr-workspace/sgr-workspace-folder/sgr-workspace-folder.component';
 registerLocaleData(zh);
 
 @NgModule({
@@ -26,7 +27,8 @@ registerLocaleData(zh);
     SgrToolComponent,
     SgrSearchComponent,
     SgrNewsComponent,
-    SgrFolderSizePipe
+    SgrFolderSizePipe,
+    SgrWorkspaceFolderComponent
   ],
   imports: [
     BrowserModule,
