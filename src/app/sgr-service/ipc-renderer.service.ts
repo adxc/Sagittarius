@@ -17,8 +17,8 @@ export class IpcRendererService {
   update () {
     this.ipcRenderer.send('update', 'abc');
   }
-  delete () {
-    this.ipcRenderer.send('delect', 'abc');
+  delete (project: FolderModel) {
+    this.ipcRenderer.send('delete', project);
   }
   insert (project: FolderModel) {
     this.ipcRenderer.send('insert', project);

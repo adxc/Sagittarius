@@ -15,13 +15,16 @@ export class FolderService {
       this.nodelink.getFolder(path[0]);
     }
   }
-  managerProject (folder) {
-    this.electronRemote.getMenu().subscribe(value => console.log(value));
+  managerProject (folder): Observable<any> {
+    const menu = new (this.electronRemote.getMenu());
+    menu.append(this.electronRemote.getMenuItem('删除', this.deleteProject, folder, this));
+    menu.popup({});
+    return from(this.ipcrendererService.getMainMess('delete'));
   }
-  deleteProject () {
-    console.log(1);
+  deleteProject (folder) {
+    this.ipcrendererService.delete(folder);
   }
-  getProjectList (): Observable<{}> {
+  getProjectList (): Observable<object> {
     return from(this.ipcrendererService.select({type: 'project'}));
   }
 }
