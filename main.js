@@ -21,8 +21,8 @@ function createWindow () {
   //   protocol: 'file:',
   //   slashes: true
   // }));
-  //// uncomment below to open the DevTools.
-  win.webContents.openDevTools() 
+  // uncomment below to open the DevTools.
+  // win.webContents.openDevTools() 
   // Event when the window is closed.
   win.on('closed', function () {
     win = null
