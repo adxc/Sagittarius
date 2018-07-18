@@ -4,8 +4,10 @@ import {Observable, from} from 'rxjs';
 import {ElectronRemoteService} from './electron-remote.service';
 import {NodeLinkService} from './node-link.service';
 import {IpcRendererService} from '../sgr-service/ipc-renderer.service';
+import { FolderModel } from '../sgr-model/folder-model';
 @Injectable()
 export class FolderService {
+  selectFolder: FolderModel;
   constructor(private electronRemote: ElectronRemoteService,
      private nodelink: NodeLinkService,
       private ipcrendererService: IpcRendererService) { }

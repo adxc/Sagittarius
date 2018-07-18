@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 
 
 import { FolderService } from '../../sgr-service/folder.service';
@@ -10,7 +10,7 @@ import { FolderModel } from '../../sgr-model/folder-model';
   providers: [FolderService]
 })
 export class SgrFolderComponent implements OnInit {
-  folder: FolderModel;
+  @Output() selectPorject = new EventEmitter<FolderModel>();
   private selectFolder;
   public folderList;
   constructor(private folderService: FolderService) { }
@@ -23,6 +23,7 @@ export class SgrFolderComponent implements OnInit {
   }
   showProject (folder) {
      this.selectFolder = folder;
+     this.selectPorject.emit(folder);
   }
   managerProject (folder) {
     this.folderService.managerProject(folder).subscribe(msg => {
