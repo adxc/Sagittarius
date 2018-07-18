@@ -75,3 +75,14 @@ a,a:hover{color:#333;}
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+.ant-tabs-bar{
+    border-bottom: 1px solid #0c0b0b;
+    .ant-tabs-tab{
+        background: #333 !important;
+        border: 0 !important;
+        color: #999 !important;
+        .anticon-close {
+            color: #fff !important;
+        }
+    }
+}

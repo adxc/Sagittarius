@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sgr-workspace-folder.component.scss']
 })
 export class SgrWorkspaceFolderComponent implements OnInit {
-
+  private tabs: string[];
   constructor() { }
-
   ngOnInit() {
+    this.tabs = ['abc', 'bbc'];
   }
-
+  closeTab (tab: string) {
+    this.tabs.splice(this.tabs.indexOf(tab), 1);
+  }
 }
