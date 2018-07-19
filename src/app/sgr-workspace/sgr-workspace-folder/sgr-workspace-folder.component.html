@@ -1,5 +1,5 @@
 <div>
-    <nz-tabset [nzType]="'card'" [nzTabBarExtraContent]="extraTemplate">
+    <nz-tabset [nzType]="'card'"  [nzSelectedIndex]="index">
         <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
             <div>
