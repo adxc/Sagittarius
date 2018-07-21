@@ -29,4 +29,7 @@ export class SgrWorkspaceComponent implements OnInit {
       }
     });
   }
+  tabClick (tab) {
+    this.selectItem = '';
+  }
 }

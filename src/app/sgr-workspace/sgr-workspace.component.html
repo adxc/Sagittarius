@@ -1,6 +1,6 @@
 <div class="sgr-workspace">
   <nz-tabset [nzType]="'card'" [nzSelectedIndex]="index">
-    <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+    <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate" (nzClick)='tabClick(tab)'>
       <ng-template #titleTemplate>
         <div>
           {{ tab }}
