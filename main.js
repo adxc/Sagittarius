@@ -7,14 +7,16 @@ let win;
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    show:true,
+    show:false,
+    width:1024,
+    height:760,
     backgroundColor: '#343a40',
     icon: `file://${__dirname}/dist/.icon-ico/icon.ico`,
   })
   win.once('ready-to-show', () =>{
+    win.show();
     win.maximize();
   })
-  //win.loadURL(`file://${__dirname}/dist/Sagittarius/index.html`)
   win.loadURL(`http://localhost:4200`)
   // win.loadURL(url.format({
   //   pathname: path.join(__dirname, 'dist/Sagittarius/index.html'),

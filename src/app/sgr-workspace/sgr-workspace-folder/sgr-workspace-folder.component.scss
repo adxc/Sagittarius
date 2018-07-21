@@ -14,35 +14,14 @@
                 font-size: 36px;
             }
         }
-        .sgr-folder-list{
-            .sgr-folder-describe {
-                display: flex;
-                font-size: 14px;
-                align-items: center;
-                li {
-                    min-width: 100px;
-                    border-right: 1px solid #fff;
-                    height: 20px;
-                    line-height: 20px;
-                    margin-right: 20px;
-                    label {
-                        margin-right: 15px;
-                    }
-                    &:last-child {
-                        border-right: 0px;
-                    }
-                }
-                
+        .sgr-project-describe{
+            font-size: 14px;
+            label {
+                margin-right: 15px;
             }
-            .sgr-project-describe{
-                font-size: 14px;
-                label {
-                    margin-right: 15px;
-                }
-                li {
-                    height: 30px;
-                    line-height: 30px;
-                }
+            li {
+                height: 30px;
+                line-height: 30px;
             }
         }
     }
