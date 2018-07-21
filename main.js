@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path');
+const url = require('url');
 
 let win;
 
@@ -7,15 +9,20 @@ function createWindow () {
   win = new BrowserWindow({
     show:true,
     backgroundColor: '#343a40',
-    icon: `file://${__dirname}/dist/assets/logo.png`  
+    icon: `file://${__dirname}/dist/.icon-ico/icon.ico`,
   })
   win.once('ready-to-show', () =>{
     win.maximize();
   })
   //win.loadURL(`file://${__dirname}/dist/Sagittarius/index.html`)
   win.loadURL(`http://localhost:4200`)
-  //// uncomment below to open the DevTools.
-  win.webContents.openDevTools() 
+  // win.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'dist/Sagittarius/index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }));
+  // uncomment below to open the DevTools.
+   win.webContents.openDevTools() 
   // Event when the window is closed.
   win.on('closed', function () {
     win = null

@@ -1,14 +1,14 @@
 <div class="sgr-nav-list">
   <div class="sgr-nav-list-shrink">
-    <nav class="nav flex-column">
-      <a class="nav-link nav-folder" href="#" [class.nav-folder_active]="isActive == 'folder' ? true : false" (click)="navSelect('folder')"></a>
-      <a class="nav-link nav-tool" href="#"   [class.nav-tool_active]="isActive == 'tool' ? true : false"  (click)="navSelect('tool')"></a>
-      <a class="nav-link nav-search" href="#" [class.nav-search_active]="isActive == 'search' ? true : false"  (click)="navSelect('search')"></a>
-      <a class="nav-link nav-news" href="#"   [class.nav-news_active]="isActive == 'news' ? true : false"  (click)="navSelect('news')"></a>
+    <nav class="nav flex-column align-items-center">
+      <div class="nav-link nav-folder" [class.nav-folder_active]="isActive == 'folder' ? true : false" (click)="navSelect('folder')"></div>
+      <div class="nav-link nav-tool"    [class.nav-tool_active]="isActive == 'tool' ? true : false"  (click)="navSelect('tool')"></div>
+      <div class="nav-link nav-search"  [class.nav-search_active]="isActive == 'search' ? true : false"  (click)="navSelect('search')"></div>
+      <div class="nav-link nav-news"    [class.nav-news_active]="isActive == 'news' ? true : false"  (click)="navSelect('news')"></div>
     </nav>
   </div>
   <div class="sgr-nav-list-expand" [ngSwitch] = "selectItem">
-    <app-sgr-folder *ngSwitchCase="'folder'" [class.f-dn]="isShow"></app-sgr-folder>
+    <app-sgr-folder *ngSwitchCase="'folder'" [class.f-dn]="isShow" (selectPorject)="manager($event)"></app-sgr-folder>
     <app-sgr-tool  *ngSwitchCase="'tool'" [class.f-dn]="isShow"></app-sgr-tool>
     <app-sgr-search *ngSwitchCase="'search'" [class.f-dn]="isShow"></app-sgr-search>
     <app-sgr-news *ngSwitchCase="'news'" [class.f-dn]="isShow"></app-sgr-news>

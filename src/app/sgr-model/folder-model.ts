@@ -1,5 +1,6 @@
 export class FolderModel {
-    name: String;
-    size: Number;
-    path: String;
+    name: string;
+    size: number;
+    path: string;
+    type: string;
 }

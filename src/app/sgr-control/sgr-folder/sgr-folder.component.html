@@ -9,13 +9,15 @@
   <div class="sgr-folder-list">
     <div class="sgr-title-item">项目的列表</div>
     <div class="sgr-folder-listPanel">
-      <div *ngFor="let folder of folderList" class="sgr-folder-item" (click)="showProject(folder)" [class.isActive]="folder === selectFolder">
-        <img src="../../../assets/images/project.png" alt="">
+      <div *ngFor="let folder of folderList" (contextmenu)="managerProject(folder)" class="sgr-folder-item" (click)="showProject(folder)"  [class.isActive]="folder === selectFolder">
+        <div class="sgr-project-logo">
+          <img src="./assets/images/project.png" alt="">
+        </div>
         <div class="sgr-project-name">
           {{folder.name}}
         </div>
         <div class="sgr-project-size">
-          {{folder.size}}Mb
+          {{folder.size | sgrFolderSize}}
         </div>
       </div>
     </div>

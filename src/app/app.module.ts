@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-
+import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 
 import { SgrNavListComponent } from './sgr-nav-list/sgr-nav-list.component';
 import { SgrWorkspaceComponent } from './sgr-workspace/sgr-workspace.component';
@@ -12,6 +11,12 @@ import { SgrToolComponent } from './sgr-control/sgr-tool/sgr-tool.component';
 import { SgrSearchComponent } from './sgr-control/sgr-search/sgr-search.component';
 import { SgrNewsComponent } from './sgr-control/sgr-news/sgr-news.component';
 import { SgrFolderSizePipe } from './sgr-pipe/sgr-folder-size.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+import { SgrWorkspaceFolderComponent } from './sgr-workspace/sgr-workspace-folder/sgr-workspace-folder.component';
+registerLocaleData(zh);
 
 @NgModule({
   declarations: [
@@ -23,13 +28,15 @@ import { SgrFolderSizePipe } from './sgr-pipe/sgr-folder-size.pipe';
     SgrSearchComponent,
     SgrNewsComponent,
     SgrFolderSizePipe,
+    SgrWorkspaceFolderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    NgZorroAntdModule,
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
