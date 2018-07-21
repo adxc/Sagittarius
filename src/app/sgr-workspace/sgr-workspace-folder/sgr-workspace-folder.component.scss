@@ -1,9 +1,9 @@
 .sgr-workspace-folder{
-    padding-left: 30px;
     color:#fff;
     .sgr-folder-info{
         display: flex;
         align-items:center;
+        padding-left: 30px;
         img{
             width: 128px;
             height: 128px;
@@ -23,6 +23,18 @@
                 height: 30px;
                 line-height: 30px;
             }
+        }
+    }
+    .sgr-folder-detail{
+        .sgr-folder-title{
+            font-size: 18px;
+            height: 40px;
+            border-bottom: 1px solid #666;
+            padding: 5px 5px 5px 10px;
+        }
+        .sgr-folder-content {
+            padding: 15px;
+            font-size: 14px;
         }
     }
 }
