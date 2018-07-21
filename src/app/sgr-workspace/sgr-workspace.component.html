@@ -7,8 +7,8 @@
           <i class="anticon anticon-close" (click)="closeTab(tab)"></i>
         </div>
       </ng-template>
-      <div class="sgr-workspace-type">
-        <app-sgr-workspace-folder></app-sgr-workspace-folder>
+      <div class="sgr-workspace-type" [ngSwitch] = "selectItem.type">
+        <app-sgr-workspace-folder *ngSwitchCase="'project'" [folder] = "selectItem"></app-sgr-workspace-folder>
       </div>
     </nz-tab>
   </nz-tabset>

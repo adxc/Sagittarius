@@ -2,10 +2,10 @@
   <div class="sgr-folder-info">
     <img src="./assets/images/default.png" alt="">
     <div class="sgr-folder-infoList">
-      <div class="sgr-folder-title">sagittarius</div>
+      <div class="sgr-folder-title">{{folder.name}}</div>
       <ul class="sgr-project-describe">
-          <li><label for="">大小:</label>515B</li>
-          <li><label for="">位置:</label>D:\\webDev\\angularDemo\\e2e</li>
+          <li><label for="">大小:</label>{{folder.size | sgrFolderSize}}</li>
+          <li><label for="">位置:</label>{{folder.path}}</li>
           <li><label for="">作者:</label>andyxic</li>
           <li><label for="">版本:</label>0.1.0</li>
           <li><label for="">简介:</label>An Electron App</li>
@@ -16,7 +16,7 @@
     <div class="sgr-folder-title">项目简介</div>
     <div class="sgr-folder-content">
         # Sagittarius
-        
+
         This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
         
         ## Development server
