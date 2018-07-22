@@ -1,6 +1,7 @@
 import { Component, OnInit , Input} from '@angular/core';
 
 import { FolderModel } from '../../sgr-model/folder-model';
+import { NodeLinkService } from '../../sgr-service/node-link.service';
 @Component({
   selector: 'app-sgr-workspace-folder',
   templateUrl: './sgr-workspace-folder.component.html',
@@ -8,8 +9,11 @@ import { FolderModel } from '../../sgr-model/folder-model';
 })
 export class SgrWorkspaceFolderComponent implements OnInit {
   @Input () folder: FolderModel;
-  constructor() { }
+  constructor(private nodeLink: NodeLinkService) { }
   ngOnInit() {
-    console.log(this.folder);
+    this.getFolderDetail();
+  }
+  getFolderDetail () {
+    this.nodeLink.getFolderDesc(this.folder.path);
   }
 }

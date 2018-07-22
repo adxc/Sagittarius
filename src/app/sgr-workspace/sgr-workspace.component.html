@@ -3,7 +3,7 @@
     <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate" (nzClick)='tabClick(tab)'>
       <ng-template #titleTemplate>
         <div>
-          {{ tab }}
+          {{ tab.name }}
           <i class="anticon anticon-close" (click)="closeTab(tab)"></i>
         </div>
       </ng-template>

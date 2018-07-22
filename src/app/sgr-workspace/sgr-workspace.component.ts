@@ -21,15 +21,15 @@ export class SgrWorkspaceComponent implements OnInit {
   selected () {
     this.managerService.managerItem.subscribe(data => {
       this.selectItem = data;
-      if (this.tabs.indexOf(data.name) === -1) {
-        this.tabs.push(data.name);
+      if (this.tabs.indexOf(data) === -1) {
+        this.tabs.push(data);
         this.index = this.tabs.length  - 1;
       } else {
-        this.index = this.tabs.indexOf(data.name);
+        this.index = this.tabs.indexOf(data);
       }
     });
   }
   tabClick (tab) {
-    this.selectItem = '';
+    this.selectItem = tab;
   }
 }
