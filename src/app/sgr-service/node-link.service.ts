@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { FolderModel } from '../sgr-model/folder-model';
 import { IpcRendererService } from '../sgr-service/ipc-renderer.service';
-import { resolve } from 'url';
-import { reject } from '../../../node_modules/@types/q';
+import { from, concat} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -40,20 +39,20 @@ export class NodeLinkService {
       } catch (error) {}});
   }
   getFolderDesc (path: string) {
-    this.fileContents(path, 'package.json').then(data => {
-      console.log(data);
-    });
+    const readMe = this.fileContents(path, 'README.MD');
+    const packageJson = this.fileContents(path, 'package.json');
+    return concat(readMe, packageJson);
   }
   fileContents (path: string, filename: string) {
     const file = this.path.join(path, filename);
-    return new Promise((resolve, reject) => {
+    return from(new Promise((resolve, reject) => {
       this.fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
-          reject(err);
+         reject(filename);
         } else {
           resolve(data);
         }
       });
-    });
+    }));
   }
 }

@@ -14,6 +14,10 @@ export class SgrWorkspaceFolderComponent implements OnInit {
     this.getFolderDetail();
   }
   getFolderDetail () {
-    this.nodeLink.getFolderDesc(this.folder.path);
+    this.nodeLink.getFolderDesc(this.folder.path).subscribe(data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    });
   }
 }
