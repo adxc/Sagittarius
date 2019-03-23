@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { SgrWorkspaceFolderComponent } from './sgr-workspace/sgr-workspace-folder/sgr-workspace-folder.component';
+import { SgrTerminalComponent } from './sgr-terminal/sgr-terminal.component';
+import { HttpClientModule } from '@angular/common/http';
 registerLocaleData(zh);
 
 @NgModule({
@@ -28,13 +30,15 @@ registerLocaleData(zh);
     SgrSearchComponent,
     SgrNewsComponent,
     SgrFolderSizePipe,
-    SgrWorkspaceFolderComponent
+    SgrWorkspaceFolderComponent,
+    SgrTerminalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
+    HttpClientModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

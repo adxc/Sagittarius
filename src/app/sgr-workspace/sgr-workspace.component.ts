@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ManagerService } from '../sgr-service/manager.service';
-import { element } from '../../../node_modules/protractor';
+
 @Component({
   selector: 'app-sgr-workspace',
   templateUrl: './sgr-workspace.component.html',
