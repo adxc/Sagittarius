@@ -48,7 +48,7 @@ export class NodeLinkService {
     return from(new Promise((resolve, reject) => {
       this.fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
-         reject(filename);
+          reject(filename);
         } else {
           resolve(data);
         }
